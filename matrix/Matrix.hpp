@@ -711,6 +711,11 @@ Matrix<Type, M, N> max(const Matrix<Type, M, N> &x1, const Matrix<Type, M, N> &x
     }
     return m;
 }
+template<typename Type, size_t M>
+void min(const Matrix<Type, M, 1> &matrix, Type &min_value, size_t &min_index) {
+    const Vector<Type, M> &v = static_cast<const Vector<Type, M>&>(matrix);
+    v.min(min_value, min_index);
+}
 
 template<typename Type, size_t  M, size_t N>
 Matrix<Type, M, N> constrain(const Matrix<Type, M, N> &x,
