@@ -20,21 +20,6 @@ template<typename Type, size_t M>
 class Vector : public Matrix<Type, M, 1>
 {
 public:
-    // 求最小值和索引
-    void min(Type &min_value, size_t &min_index) const {
-        const Vector &v(*this);
-        min_value = v(0);
-        min_index = 0;
-        for (size_t i = 1; i < M; ++i) {
-            if (v(i) < min_value) {
-                min_value = v(i);
-                min_index = i;
-            }
-        }
-    }
-    
-
-    
     using MatrixM1 = Matrix<Type, M, 1>;
 
     Vector() = default;
