@@ -712,24 +712,6 @@ Matrix<Type, M, N> max(const Matrix<Type, M, N> &x1, const Matrix<Type, M, N> &x
     return m;
 }
 
-// Add the min function definition here
-template<typename Type, size_t M, size_t N>
-void min(const Matrix<Type, M, N> &x, Type &x_min, size_t &x_index)
-{
-    const Matrix<Type, M, N> &self = x;
-    x_min = self(0, 0);
-    x_index = 0;
-
-    for (size_t i = 0; i < M; ++i) {
-        for (size_t j = 0; j < N; ++j) {
-            if (self(i, j) < x_min) {
-                x_min = self(i, j);
-                x_index = i; // Assuming that you want the index along the row
-            }
-        }
-    }
-}
-
 template<typename Type, size_t  M, size_t N>
 Matrix<Type, M, N> constrain(const Matrix<Type, M, N> &x,
                              const Type scalar_lower_bound,
