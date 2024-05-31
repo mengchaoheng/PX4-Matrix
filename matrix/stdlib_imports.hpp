@@ -26,6 +26,10 @@ namespace matrix {
 #define FLT_EPSILON     __FLT_EPSILON__
 #endif
 
+#if !defined(FLT_MAX)
+#define FLT_MAX     __FLT_MAX__
+#endif
+
 #if defined(__PX4_NUTTX)
 /*
  * NuttX has no usable C++ math library, so we need to provide the needed definitions here manually.
